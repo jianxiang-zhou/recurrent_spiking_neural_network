@@ -1,6 +1,8 @@
 # Recurrent Spiking Neural Network
 **A recurrent spiking neural network (RSNN) model trained with 3 factor rules to learn sensorimotor associations**
 
+To explore the synaptic plasticity rules underlying the observed neuronal activity reorganization during learning, we built a biological recurrent spiking neural network (RSNN) using an open-source simulator brian2 (https://github.com/brian-team/brian2).
+
 The RSNN model is composed of 200 leaky integrate-and-fire (LIF) neurons, each having 20 input and 20 output excitatory synapses with other LIF neurons. The dynamics of neuron $i$ is modeled as
 
 $${dv_i (t) \over dt}={v_{rest,i}-v_i (t) \over τ_m}+\sum_j w_{ij}·s_j (t-t_{delay})$$
