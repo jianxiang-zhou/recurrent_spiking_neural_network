@@ -12,7 +12,7 @@ where $v$ is the membrane potential, $v_{rest}$ is the resting membrane potentia
 $$s_j (t)= \sum_k δ(t-t_j^{(k)})$$
 
 where the $t^{(k)}$ is the time of $k_{th}$ spike, ${δ(·)}$ is the Dirac delta function. When membrane potential reaches a threshold $v_{thr}$, a spike is generated, and the membrane potential $v$ is reset to $v_{reset}$. To simulate the spontaneous activity of neurons, random currents are injected into the LIF neurons. All LIF neurons are excitatory, and the network activity is balanced by an inhibitory neuron group receiving inputs from and projecting back to all LIF neurons equally, mediating lateral inhibition between LIF neurons.
-The RSNN interacts with the environment using defined sensory and motor neurons. Forty LIF neurons are selected as sensory neurons that are directly excited by stimuli (twenty for stimulus A and twenty for stimulus B), and two other LIF neurons are selected as motor neurons whose firings determine the actions of the neural network (i.e., left and right choices). A reward is given when RSNN makes left choice after stimulus A or right choice after stimulus B. The reward drives learning through three-factor learning rule (Frémaux and Gerstner 2016) modeled as
+The RSNN interacts with the environment using defined sensory and motor neurons. Forty LIF neurons are selected as sensory neurons that are directly excited by stimuli (twenty for stimulus A and twenty for stimulus B), and two other LIF neurons are selected as motor neurons whose firings determine the actions of the neural network (i.e., left and right choices). A reward is given when RSNN makes left choice after stimulus A or right choice after stimulus B. The reward drives learning through three-factor learning rule (Izhikevich 2007, Fremaux and Gerstner 2016) modeled as
 
 $${de_{ij} \over dt}=-{e_{ij} \over τ_e} +STDP(s_j,s_i)$$
 
@@ -34,6 +34,6 @@ Table-1 Values of main parameters in the RSNN model
 ## Running
 Step 1: generate simulation data (2AFCnet_para_spc.py)
 
-Step 2: analyse the behavior and the spike train over learning for each case
+Step 2: analyse the behavior and the spike train over learning for each case (2AFC_analysis_each_case.py)
 
-Step 3: summary for all cases
+Step 3: summary for all cases (result_summary.py)
