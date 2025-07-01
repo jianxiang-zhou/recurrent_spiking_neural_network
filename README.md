@@ -2,7 +2,7 @@
 A recurrent spiking neural network model trained with 3 factor rules to learn sensorimotor associations
 
 The RSNN model is composed of 200 leaky integrate-and-fire (LIF) neurons, each having 20 input and 20 output excitatory synapses with other LIF neurons. The dynamics of neuron $i$ is modeled as\
-$${dv_i (t) \over dt}={v_(rest,i)-v_i (t) \over τ}+∑_j▒〖w_ij (t)〖·s〗_j 〗 (t-t_delay )$$
+$${dv_i (t) \over dt}={v_{rest,i}-v_i (t) \over τ}+∑_j▒〖w_ij (t)〖·s〗_j 〗 (t-t_delay )$$
 where v is the membrane potential, vrest is the resting membrane potential, τ is the time constant of membrane potential, wij is the synaptic weight from neuron j to neuron i, tdelay is the synaptic delay of spikes, and sj is the spike train of neuron j modelled as
 s_j (t)= ∑_k▒〖δ(t-t_j^((k)))〗
 where the t(k) is the time of kth spike, δ(·) is the Dirac delta function. When membrane potential reaches a threshold vthreshold, a spike is generated, and the membrane potential v is reset to vreset. To simulate the spontaneous activity of neurons, random currents are injected into the LIF neurons. All LIF neurons are excitatory, and the network activity is balanced by an inhibitory neuron group receiving inputs from and projecting back to all LIF neurons equally, mediating lateral inhibition between LIF neurons.
