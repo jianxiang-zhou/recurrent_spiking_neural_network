@@ -19,7 +19,10 @@ $${dw_{ij} \over dt}=R·e_{ij}$$
 where $e_{ij}$ is the eligibility trace of synapse from neuron $j$ to neuron $i$, $τ_e$ is the time constant of the eligibility trace, $s_j$ and $s_i$ are spike trains of neuron $j$ and $i$, respectively, and ${STDP(·)}$ is the function mapping pre- and post-synaptic spike trains to the change of the eligibility trace. The reward is represented as a global signal $R$ which interacts with local eligibility traces $e$ to cause permanent changes of synaptic weights $w$. In a nutshell, if some activity pattern was generated before the reward (e.g., through spontaneous activity), the three-factor learning rule would selectively strengthen the synapses supporting that activity pattern. Therefore, the behavior represented by that activity pattern would appear more frequently in the future, helping the animal to get more rewards.
 The RSNNs were trained for 2000 trials. The spike trains of LIF neurons were analyzed after training. In this network, neuronal activity was mainly driven by stimulus. We quantified the stimulus selectivity of neurons using receiver operator characteristic (ROC) analysis, and defined selectivity index (${SI}$) of neurons as the $2*|AUC-0.5|$ (AUC, area under ROC curve). Neurons with ${SI}$ larger than 0.5 were considered as task related.
 
-<p align='center'> Table-1 Values of main parameters in the RSNN model
+<p align='center'> Table-1 Values of main parameters in the RSNN model  </p>
+
+
+<q align='center'>
   
 |Parameters|Values|Parameters|Values|Parameters|Values|
 |---|---|---|---|---|---|
@@ -27,7 +30,8 @@ The RSNNs were trained for 2000 trials. The spike trains of LIF neurons were ana
 |$v_{thr}$|1|$A_{pre}$|0.005|$W_{all}$|2.5|
 |$τ_m$|5|$A_{post}$|±0.005|$W_{max}$|1.2|
 |$t_{delay}$|5|$τ_{pre}$|20|||
- </p>
+
+</q>
  
 ## Running
 Step 1: generate simulation data
