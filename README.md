@@ -32,7 +32,7 @@ Table-1 Values of main parameters in the RSNN model
 
  
 ## Running
-Step 1: generate simulation data
+Step 1: generate simulation data (2AFCnet_para_spc.py)
 
 Step 2: analyse the behavior and the spike train over learning for each case
 
