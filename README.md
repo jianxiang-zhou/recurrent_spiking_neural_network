@@ -3,13 +3,13 @@
 
 The RSNN model is composed of 200 leaky integrate-and-fire (LIF) neurons, each having 20 input and 20 output excitatory synapses with other LIF neurons. The dynamics of neuron $i$ is modeled as
 
-$${dv_i (t) \over dt}={v_{rest,i}-v_i (t) \over τ}+\sum_j w_{ij}·s_j (t-t_{delay})$$
+$${dv_i (t) \over dt}={v_{rest,i}-v_i (t) \over τ_m}+\sum_j w_{ij}·s_j (t-t_{delay})$$
 
-where $v$ is the membrane potential, $v_{rest}$ is the resting membrane potential, $τ$ is the time constant of membrane potential, $w_{ij}$ is the synaptic weight from neuron $j$ to neuron $i$, $t_{delay}$ is the synaptic delay of spikes, and $s_j$ is the spike train of neuron $j$ modelled as
+where $v$ is the membrane potential, $v_{rest}$ is the resting membrane potential, $τ_m$ is the time constant of membrane potential, $w_{ij}$ is the synaptic weight from neuron $j$ to neuron $i$, $t_{delay}$ is the synaptic delay of spikes, and $s_j$ is the spike train of neuron $j$ modelled as
 
 $$s_j (t)= \sum_k δ(t-t_j^{(k)})$$
 
-where the $t^{(k)}$ is the time of $k_{th}$ spike, ${δ(·)}$ is the Dirac delta function. When membrane potential reaches a threshold $v_{threshold}$, a spike is generated, and the membrane potential $v$ is reset to $v_{reset}$. To simulate the spontaneous activity of neurons, random currents are injected into the LIF neurons. All LIF neurons are excitatory, and the network activity is balanced by an inhibitory neuron group receiving inputs from and projecting back to all LIF neurons equally, mediating lateral inhibition between LIF neurons.
+where the $t^{(k)}$ is the time of $k_{th}$ spike, ${δ(·)}$ is the Dirac delta function. When membrane potential reaches a threshold $v_{thr}$, a spike is generated, and the membrane potential $v$ is reset to $v_{reset}$. To simulate the spontaneous activity of neurons, random currents are injected into the LIF neurons. All LIF neurons are excitatory, and the network activity is balanced by an inhibitory neuron group receiving inputs from and projecting back to all LIF neurons equally, mediating lateral inhibition between LIF neurons.
 The RSNN interacts with the environment using defined sensory and motor neurons. Forty LIF neurons are selected as sensory neurons that are directly excited by stimuli (twenty for stimulus A and twenty for stimulus B), and two other LIF neurons are selected as motor neurons whose firings determine the actions of the neural network (i.e., left and right choices). A reward is given when RSNN makes left choice after stimulus A or right choice after stimulus B. The reward drives learning through three-factor learning rule (Frémaux and Gerstner 2016) modeled as
 
 $${de_{ij} \over dt}=-{e_{ij} \over τ_e} +STDP(s_j,s_i)$$
@@ -20,6 +20,13 @@ where $e_{ij}$ is the eligibility trace of synapse from neuron $j$ to neuron $i$
 The RSNNs were trained for 2000 trials. The spike trains of LIF neurons were analyzed after training. In this network, neuronal activity was mainly driven by stimulus. We quantified the stimulus selectivity of neurons using receiver operator characteristic (ROC) analysis, and defined selectivity index (${SI}$) of neurons as the $2*|AUC-0.5|$ (AUC, area under ROC curve). Neurons with ${SI}$ larger than 0.5 were considered as task related.
 
 <p align='center'> Table-1 Values of main parameters in the RSNN model </p>
+
+|Parameters|Values|Parameters|Values|
+|---|---|---|---|---|---|
+|$V_{rest}$|0|$τ_e$|50|$τ_{post}$|20|
+|$v_{thr}$|1|$A_{pre}$|0.005|$W_{all}$|2.5|
+|$τ_m$|5|$A_{post}$|±0.005|$W_{max}$|1.2|
+|$t_{delay}$|5|$τ_{pre}$|20|||
 
 
 ## Running
