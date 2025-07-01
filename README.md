@@ -1,5 +1,5 @@
 # Recurrent Spiking Neural Network
-**A recurrent spiking neural network model trained with 3 factor rules to learn sensorimotor associations**
+**A recurrent spiking neural network (RSNN) model trained with 3 factor rules to learn sensorimotor associations**
 
 The RSNN model is composed of 200 leaky integrate-and-fire (LIF) neurons, each having 20 input and 20 output excitatory synapses with other LIF neurons. The dynamics of neuron $i$ is modeled as
 
