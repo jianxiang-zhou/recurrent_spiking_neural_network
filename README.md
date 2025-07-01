@@ -21,12 +21,12 @@ The RSNNs were trained for 2000 trials. The spike trains of LIF neurons were ana
 
 <p align='center'> Table-1 Values of main parameters in the RSNN model </p>
 
-|Parameters|Values|Parameters|Values|
+|Parameters|Values|Parameters|Values|Parameters|Values|
 |---|---|---|---|---|---|
 |$V_{rest}$|0|$τ_e$|50|$τ_{post}$|20|
 |$v_{thr}$|1|$A_{pre}$|0.005|$W_{all}$|2.5|
 |$τ_m$|5|$A_{post}$|±0.005|$W_{max}$|1.2|
-|$t_{delay}$|5|$τ_{pre}$|20|||
+|$t_{delay}$|5|$τ_{pre}$|20|aa|aa|
 
 
 ## Running
