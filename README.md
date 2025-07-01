@@ -21,5 +21,7 @@ The RSNNs were trained for 2000 trials. The spike trains of LIF neurons were ana
 
 ## running
 step 1: generate simulation data
+
 step 2: analyse the behavior and the spike train over learning for each case
+
 step 3: summary for all cases
