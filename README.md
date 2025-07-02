@@ -37,3 +37,7 @@ Step 1: generate simulation data (2AFCnet_para_spc.py)
 Step 2: analyse the behavior and the spike train over learning for each case (2AFC_analysis_each_case.py)
 
 Step 3: summary for all cases (result_summary.py)
+
+## Details
+1. A half of neurons' input synapses are not modulated by reward (i.e., their plasticity is only dependent on pre- and post-synaptic neuronal spikes), the other half of neurons' input synapses are modulated by reward (i.e., 3 facter plasticity rules). The first half neurons including all sensory neurons help the network to learn stable sensory representations which are important for learning sensorimotor associations. The other half of neurons including all motor neurons help connnecting sensation to action according to reward feedback.
+2. Spontaneous activity is essential for learning. It activates unactive neurons, having them recruited in the sensorimotor pathways through activity-dependent plasticity rules.
