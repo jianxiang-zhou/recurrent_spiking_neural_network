@@ -28,7 +28,7 @@ Table-1 Values of main parameters in the RSNN model
 |$V_{rest}$|0|$τ_e$|50|$τ_{post}$|20|
 |$v_{thr}$|1|$A_{pre}$|0.005|$W_{all}$|2.5|
 |$τ_m$|5|$A_{post}$|±0.005|$W_{max}$|1.2|
-|$t_{delay}$|5|$τ_{pre}$|20|$R_{amp}$||
+|$t_{delay}$|5|$τ_{pre}$|20|$R_{amp}$|2|
 
  
 ## Running
