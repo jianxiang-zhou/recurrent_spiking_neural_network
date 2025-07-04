@@ -581,7 +581,7 @@ def simulation(tmp_para):
 
 if __name__ == '__main__':
 
-    iteration = 5
+    iteration = 40
     sym_list = [-1,1] # asymmetrical or symmetrical STDP
     symN = len(sym_list)
     
