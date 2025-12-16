@@ -30,7 +30,6 @@ def net_stru_generate(Nsen, Nmtr, in_degree):
     to_distri = [in_degree]*Nhid
     timer = np.zeros(Nhid,)
     upstream = []
-    avail = np.zeros(Nhid,)
     total_edge = in_degree*Nhid
     for cc in range(total_edge):
         tmp_max = max(to_distri)
@@ -40,6 +39,7 @@ def net_stru_generate(Nsen, Nmtr, in_degree):
             tmp_node_i = np.random.randint(0,len(avail_nodes))
             tmp_node = avail_nodes[tmp_node_i]
             if timer[tmp_node] == 0:
+                to_distri[tmp_node] -= 1
                 upstream.append(tmp_node)
                 timer = np.clip(timer-1,0,in_degree)
                 timer[tmp_node] = in_degree
@@ -603,4 +603,5 @@ if __name__ == '__main__':
     # simulation(tmp_para)
     
     
+
 
